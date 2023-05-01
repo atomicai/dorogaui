@@ -22,7 +22,9 @@
   "license": "ISC",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "docker:build": "docker build -t dorogaui .",
+    "docker:run": "docker run -p 80:80 dorogaui"
   },
   "eslintConfig": {
     "extends": [
