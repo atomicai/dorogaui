@@ -1,8 +1,15 @@
-# Getting Started with hack3-stack
+# Getting Started with Doroga UI
 
-This project was made for rapid and easy project setup and development
+Use **Doroga UI** :motorway: for a quick web service frontend setup, on hackathons especially.\
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## So... what is hack3-stack? A template?
+## Before Start
+Follow instructions from `.env` file before running available scripts.
 
-Yes, specifically for situations when you need to quickly setup your project and have all things needed already configured. The main purpose is hackathons. This template has all the benefits of full-fledged web application (server state manager, global state manager, routing, etc) with easy-to-navigate alternatives for rapid development where time is of the essence. That way, you don't have to worry about nonrelevant stuff and focus on what matters most - development.
+## Available Scripts
+
+### `npm run start`
+Runs the app in the development mode.
+
+### `npm run build`
+Builds the app for production to the `build` folder.

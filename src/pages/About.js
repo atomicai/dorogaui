@@ -1,57 +1,40 @@
-import React from 'react'
-
 import { useAtom } from 'jotai'
+
 import { participantsAtom } from '../store/about.atom'
 
-// about us page
-// first point to test API
-// using axios as HTTP-client and react-query for server state management
-// do not forget to configure your own .env file with GIST_ID
+// About Page
 export default function About() {
   const [data] = useAtom(participantsAtom)
 
   return (
-    <section className="flex justify-center items-center w-full h-full p-5">
-      <div className="grid gap-5 grid-cols-2 w-full h-full">
-        {data.participants.map((participant, index) => {
-          return (
-            <div
-              key={index}
-              className="w-full card card-side bg-base-100 shadow-xl h-full"
-            >
-              <figure>
-                <img
-                  src={participant.image}
-                  alt="Movie"
-                  className="w-52 h-full"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title text-white">{participant.name}</h2>
-                <p className="text-white opacity-60">{participant.role}</p>
-                <div className="card-actions justify-end">
-                  {participant.skills.map((skill, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className={`h-8 badge ${
-                          index === 0
-                            ? 'badge-primary'
-                            : index === 1
-                            ? 'badge-secondary'
-                            : 'badge-accent'
-                        } `}
-                      >
-                        {skill}
-                      </div>
-                    )
-                  })}
-                </div>
+    <main className="w-screen h-screen flex flex-col items-center justify-top py-16">
+      <h1 className="text-3xl font-bold">Our Team</h1>
+      <div className="grid gap-16 py-16 sm:grid-cols-2">
+        {data.participants.map((participant, indexParticipant) => (
+          <div
+            key={indexParticipant}
+            className="card card-side h-72 bg-base-100 shadow-xl"
+          >
+            <figure className="avatar w-72">
+              <img src={participant.image} alt={`Participant's avatar`} />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title text-3xl">{participant.name}</h2>
+              <p className="text-2xl">{participant.role}</p>
+              <div className="card-actions justify-end">
+                {participant.skills.map((skill, indexSkill) => (
+                  <div
+                    key={`${indexParticipant}.${indexSkill}`}
+                    className="badge badge-outline badge-lg"
+                  >
+                    {skill}
+                  </div>
+                ))}
               </div>
             </div>
-          )
-        })}
+          </div>
+        ))}
       </div>
-    </section>
+    </main>
   )
 }
