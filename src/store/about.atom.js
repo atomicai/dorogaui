@@ -1,15 +1,16 @@
-import axios from 'axios'
 import { atomsWithQuery } from 'jotai-tanstack-query'
-import { BASE_URL, headers } from '../api'
+import { octokit, GITHUB_API_HEADERS } from '../api/octokit'
 
-// Create your atoms and derivatives
+const GITHUB_GISTS_ID = '4f991015ac388dcc0cca0e6d8d437215'
+const GITHUB_GISTS_FILE_NAME = 'gistfile1.txt'
+
 export const [participantsAtom] = atomsWithQuery(() => ({
   queryKey: ['about'],
   queryFn: async () =>
-    axios
-      .get(BASE_URL + process.env.REACT_APP_GIST_ID, {
-        gist_id: process.env.REACT_APP_GIST_ID,
-        headers: headers
+    octokit
+      .request(`GET /gists/${GITHUB_GISTS_ID}`, {
+        gist_id: GITHUB_GISTS_ID,
+        headers: GITHUB_API_HEADERS
       })
-      .then((res) => JSON.parse(res.data.files['gistfile1.txt'].content))
+      .then((res) => JSON.parse(res.data.files[GITHUB_GISTS_FILE_NAME].content))
 }))
