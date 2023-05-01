@@ -18,5 +18,5 @@ Builds the app for production to the `build` folder.
 Builds the Docker image of the app for production.\
 Still is not familiar with Docker? Start [here](https://www.docker.com/).
 
-### `npm run docker:run
+### `npm run docker:run`
 Runs the Docker image of the app built for production.
