@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  dorogaui:
+    container_name: dorogaui
+    image: dorogaui
+    build:
+      dockerfile: Dockerfile
+      target: wrap
+    ports:
+      - 80:80
