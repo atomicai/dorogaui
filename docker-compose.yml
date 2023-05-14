@@ -8,4 +8,4 @@ services:
       dockerfile: Dockerfile
       target: wrap
     ports:
-      - 80:80
+      - 8888:8888
