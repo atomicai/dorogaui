@@ -1,13 +1,13 @@
 import { useAtom } from 'jotai'
 
 import { participantsAtom } from '../store/about.atom'
+import Layout from '../components/Layout'
 
-// About Page
 export default function About() {
   const [data] = useAtom(participantsAtom)
 
   return (
-    <main className="w-screen h-screen flex flex-col items-center justify-top py-16">
+    <Layout>
       <h1 className="text-3xl font-bold">Our Team</h1>
       <div className="grid gap-16 py-16 sm:grid-cols-2">
         {data.participants.map((participant, indexParticipant) => (
@@ -35,6 +35,6 @@ export default function About() {
           </div>
         ))}
       </div>
-    </main>
+    </Layout>
   )
 }

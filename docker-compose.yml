@@ -5,6 +5,7 @@ services:
     container_name: dorogaui
     image: dorogaui
     build:
+      context: ./
       dockerfile: Dockerfile
       target: wrap
     ports:
