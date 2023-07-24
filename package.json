@@ -1,50 +1,29 @@
 {
   "name": "dorogaui",
-  "version": "0.1.0",
-  "description": "A package for a quick web service frontend setup",
-  "dependencies": {
-    "@octokit/core": "^4.2.0",
-    "@tanstack/query-core": "^4.29.5",
-    "daisyui": "^2.51.6",
-    "jotai": "^2.0.4",
-    "jotai-tanstack-query": "^0.7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-query": "^3.39.3",
-    "react-router-dom": "^6.10.0",
-    "react-scripts": "5.0.1"
-  },
-  "main": "index.js",
-  "repository": {
-    "type": "git"
-  },
   "author": "atomicai",
-  "license": "ISC",
+  "version": "0.1.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "docker:build": "docker-compose -f docker-compose.yml build",
-    "docker:run": "docker-compose -f docker-compose.yml up -d"
+    "dev": "next dev",
+    "build": "next build",
+    "docker:build": "docker-compose build dorogaui",
+    "docker:run": "docker-compose up -d dorogaui"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@octokit/core": "^5.0.0",
+    "@tanstack/query-core": "^4.32.0",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
+    "jotai": "^2.2.2",
+    "jotai-tanstack-query": "^0.7.1",
+    "nanoid": "^4.0.2",
+    "next": "13.4.12",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.3"
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.1"
+    "daisyui": "^3.4.0"
   }
 }
